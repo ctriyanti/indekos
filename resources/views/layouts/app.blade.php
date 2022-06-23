@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-    @include('partials.head')
-    <body id="page-top">
-        <!-- Navigation-->
-        @include('partials.nav')
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container">
-                <div class="masthead-subheading">Welcome To Our Studio!</div>
-                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
-            </div>
-        </header>
+<!--
+Template Name: BRILLIANT Bootstrap Admin Template
+Version: 4.5.6
+Author: WebThemez
+Website: http://www.webthemez.com/
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+@include('admin.partials.head')
+
+<body>
+    <div id="wrapper">
+        @include('admin.partials.nav')
         <main>
-            {{ $slot }}
+            {{$slot}}
         </main>
-        <!-- Footer-->
-        @include('partials.footer')
-        @include('partials.scripts')
-    </body>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    @include('admin.partials.scripts')
+</body>
+
 </html>

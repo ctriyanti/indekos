@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
     <!-- Services-->
     <section class="page-section" id="services">
         <div class="container">
@@ -535,4 +535,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-guest-layout>
