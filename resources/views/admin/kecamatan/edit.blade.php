@@ -2,12 +2,12 @@
     <div id="page-wrapper">
         <div class="header">
             <h1 class="page-header">
-                Tambah Kecamatan
+                Sunting Kecamatan {{ $kecamatan->kecamatan }}
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#">Beranda</a></li>
                 <li><a href="#">Dashboard</a></li>
-                <li class="active">Tambah Kecamatan</li>
+                <li class="active">Sunting Kecamatan</li>
             </ol>
 
         </div>
@@ -22,22 +22,22 @@
                                 @method("POST")
                                 <div class="sub-title">Kecamatan</div>
                                 <div>
-                                    <input type="text" name="kecamatan" class="form-control" placeholder="Masukkan nama kecamatan">
+                                    <input type="text" name="kecamatan" class="form-control" value="{{ $kecamatan->kecamatan }}">
                                 </div>
                                 <div class="sub-title">Deskripsi</div>
                                 <div>
-                                    <textarea class="form-control" rows="3" name="deskripsi"></textarea>
+                                    <textarea class="form-control" rows="3" name="deskripsi">{{ $kecamatan->description }}</textarea>
                                 </div>
                                 <div class="sub-title">Status</div>
                                 <div>
                                     <div class="radio3 radio-check radio-inline">
-                                        <input type="radio" id="status" name="status" value="active" checked="">
+                                        <input type="radio" id="status" name="status" value="active" {{ $kecamatan->status == 'active' ? 'checked' : '' }}>
                                         <label for="status">
                                             Aktif
                                         </label>
                                     </div>
                                     <div class="radio3 radio-check radio-inline">
-                                        <input type="radio" id="status" name="status" value="inactive" checked="">
+                                        <input type="radio" id="status" name="status" value="inactive" {{ $kecamatan->status == 'inactive' ? 'checked' : '' }}>
                                         <label for="status">
                                             Inaktif
                                         </label>

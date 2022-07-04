@@ -25,21 +25,33 @@
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>No.</th>
+                                            <th class="text-center">No.</th>
                                             <th>Kecamatan</th>
-                                            <th>Status</th>
-                                            <th>Diubah Oleh</th>
-                                            <th>Aksi</th>
+                                            <th>Deskripsi</th>
+                                            <th class="text-center">Status</th>
+                                            <th class="text-center">Diubah Oleh</th>
+                                            <th class="text-center">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                            <td>John15482</td>
-                                            <td>name@site.com</td>
-                                        </tr>
+                                        @foreach ($kecamatan as $item)
+                                            <tr>
+                                                <td class="text-center">{{ $loop->iteration }}</td>
+                                                <td>{{ $item->kecamatan }}</td>
+                                                <td>{{ Str::limit($item->description, 70, '...') }}</td>
+                                                <td class="text-center">{{ $item->status }}</td>
+                                                <td class="text-center">{{ $item->updated_by }}</td>
+                                                <td style="display: flex; margin: 5px" class="m-sm-1">
+                                                    <a href="{{ url('admin/kecamatan/edit/'.$item->id) }}" class="btn btn-success" style="margin-right: 5px">Sunting</a>
+                                                    <form action="{{route('hapusKecamatan')}}" method="POST" enctype="multipart/form-data">
+                                                        @csrf
+                                                        @method("POST")
+                                                        <input type="hidden" value="{{ $item->id }}" name="id">
+                                                        <button class="btn btn-danger">Hapus</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

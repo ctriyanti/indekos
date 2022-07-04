@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Validator;
 class KecamatanController extends Controller
 {
     public function index(){
-        return view('admin.kecamatan.index');
+        $kecamatan = Kecamatan::all();
+        return view('admin.kecamatan.index', compact('kecamatan'));
     }
 
     public function create_view(){
@@ -36,13 +37,22 @@ class KecamatanController extends Controller
             'created_by' => 'admin',
             'updated_by' => 'admin'
         ]);
-
         if($kecamatan){
-            return redirect()->route('index');
+            return redirect()->route('indexKecamatan');
         } else{
             return json_encode(['status' => false, 'message' => 'Gagal tambah kecamatan']);
         }
+    }
 
+    public function edit_view($id){
+        $kecamatan = Kecamatan::findOrFail($id);
+        return view('admin.kecamatan.edit', compact('kecamatan'));
+    }
 
+    public function delete(Request $request) {
+        $id = $request->id;
+        $kecamatan = Kecamatan::findOrFail($id);
+        $kecamatan->delete();
+        return redirect()->route('indexKecamatan');
     }
 }
