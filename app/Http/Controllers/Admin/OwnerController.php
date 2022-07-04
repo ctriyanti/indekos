@@ -29,7 +29,7 @@ class OwnerController extends Controller
         ]);
 
         if ($validation->fails()) {
-            return json_encode(['status' => false, 'message' => $validation->messages()]);
+            // return json_encode(['status' => false, 'message' => $validation->messages()]);
         }
 
         if ($request->foto != null) {

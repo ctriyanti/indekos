@@ -25,7 +25,7 @@ class KecamatanController extends Controller
             'deskripsi' => 'required',
         ]);
         if ($validation->fails()) {
-            return json_encode(['status' => false, 'message' => $validation->messages()]);
+            // return json_encode(['status' => false, 'message' => $validation->messages()]);
         }
 
         $kecamatan = Kecamatan::create([
