@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\KecamatanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,8 @@ Route::get('/', function () {
 Route::get('/admin/dashboard', function () {
     return view('admin.index');
 });
+Route::get('admin/kecamatan', [KecamatanController::class, 'index']);
+Route::get('admin/kecamatan/create', [KecamatanController::class, 'create_view']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -325,11 +325,9 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
             <!-- /. ROW  -->
-
             @include('admin.partials.footer')
         </div>
         <!-- /. PAGE INNER  -->
