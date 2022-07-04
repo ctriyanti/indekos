@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\KecamatanController;
+use App\Http\Controllers\Admin\OwnerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +27,16 @@ Route::get('admin/kecamatan/create', [KecamatanController::class, 'create_view']
 Route::post('admin/kecamatan/submit', [KecamatanController::class, 'submit'])->name('tambahKecamatan');
 Route::post('admin/kecamatan/delete', [KecamatanController::class, 'delete'])->name('hapusKecamatan');
 Route::get('admin/kecamatan/edit/{id}', [KecamatanController::class, 'edit_view']);
-Route::post('admin.kecamatan/update', [KecamatanController::class, 'update'])->name('simpanKecamatan');
+Route::post('admin/kecamatan/update', [KecamatanController::class, 'update'])->name('simpanKecamatan');
+
+// pemilik kos
+Route::get('admin/owner', [OwnerController::class, 'index'])->name('indexOwner');
+Route::get('admin/owner/create', [OwnerController::class, 'create_view']);
+Route::post('admin/owner/submit', [OwnerController::class, 'submit'])->name('tambahOwner');
+Route::post('admin/owner/delete', [OwnerController::class, 'delete'])->name('hapusOwner');
+Route::get('admin/owner/edit/{id}', [OwnerController::class, 'edit_view']);
+Route::post('admin/owner/update', [OwnerController::class, 'update'])->name('simpanOwner');
+
 
 
 Route::get('/dashboard', function () {
