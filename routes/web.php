@@ -20,11 +20,14 @@ Route::get('/', function () {
 Route::get('/admin/dashboard', function () {
     return view('admin.index');
 });
+// kecamatan
 Route::get('admin/kecamatan', [KecamatanController::class, 'index'])->name('indexKecamatan');
 Route::get('admin/kecamatan/create', [KecamatanController::class, 'create_view']);
 Route::post('admin/kecamatan/submit', [KecamatanController::class, 'submit'])->name('tambahKecamatan');
 Route::post('admin/kecamatan/delete', [KecamatanController::class, 'delete'])->name('hapusKecamatan');
 Route::get('admin/kecamatan/edit/{id}', [KecamatanController::class, 'edit_view']);
+Route::post('admin.kecamatan/update', [KecamatanController::class, 'update'])->name('simpanKecamatan');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

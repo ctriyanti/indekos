@@ -48,6 +48,22 @@ class KecamatanController extends Controller
         $kecamatan = Kecamatan::findOrFail($id);
         return view('admin.kecamatan.edit', compact('kecamatan'));
     }
+    
+    public function update(Request $request) {
+        $data = Kecamatan::findOrFail($request->id);
+        if($data){
+            $data->kecamatan = $request->kecamatan;
+            $data->description = $request->deskripsi;
+            $data->status = $request->status;
+            $data->updated_at = Carbon::now();
+            $data->updated_by = 'admin';
+            $data->save();
+
+            return redirect()->route('indexKecamatan');
+        } else{
+            return json_encode(['status' => false, 'message' => 'Gagal ubah kecamatan']);
+        }
+    }
 
     public function delete(Request $request) {
         $id = $request->id;
