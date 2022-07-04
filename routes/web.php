@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\KecamatanController;
+use App\Http\Controllers\Admin\KosController;
 use App\Http\Controllers\Admin\OwnerController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +37,9 @@ Route::post('admin/owner/submit', [OwnerController::class, 'submit'])->name('tam
 Route::post('admin/owner/delete', [OwnerController::class, 'delete'])->name('hapusOwner');
 Route::get('admin/owner/edit/{id}', [OwnerController::class, 'edit_view']);
 Route::post('admin/owner/update', [OwnerController::class, 'update'])->name('simpanOwner');
+
+// kos
+Route::get('admin/kos', [KosController::class, 'index'])->name('indexKos');
 
 
 

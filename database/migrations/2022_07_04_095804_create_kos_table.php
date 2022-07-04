@@ -22,6 +22,7 @@ class CreateKosTable extends Migration
             $table->integer('owner_id');
             $table->bigInteger('harga');
             $table->enum('jenis_sewa', ['harian', 'mingguan', 'bulanan'])->default('bulanan');
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->string('created_by');
             $table->string('updated_by');
             $table->timestamps();
