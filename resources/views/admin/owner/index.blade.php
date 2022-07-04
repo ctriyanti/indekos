@@ -39,7 +39,9 @@
                                         @foreach ($owner as $item)
                                             <tr>
                                                 <td class="text-center">{{ $loop->iteration }}</td>
-                                                <td class="text-center">{{ $item->foto }}</td>
+                                                <td class="text-center">
+                                                    <img src="{{ asset($item->foto) }}" alt="foto pemilik kos" height="120px">    
+                                                </td>
                                                 <td>{{ $item->nama }}</td>
                                                 <td class="text-center">{{ $item->no_hp }}</td>
                                                 <td class="text-center">{{ $item->no_ktp }}</td>

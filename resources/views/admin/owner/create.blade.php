@@ -20,6 +20,10 @@
                             <form action="{{ route('tambahOwner') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method("POST")
+                                <div class="sub-title">Foto Pemilik Kos</div>
+                                <div>
+                                    <input type="file" name="foto" class="form-control">
+                                </div>
                                 <div class="sub-title">Nama</div>
                                 <div>
                                     <input type="text" name="nama" class="form-control" placeholder="Masukkan nama lengkap">

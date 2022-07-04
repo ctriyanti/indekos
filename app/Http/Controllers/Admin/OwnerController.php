@@ -25,11 +25,19 @@ class OwnerController extends Controller
             'no_hp' => 'required',
             'no_ktp' => 'required',
             'alamat' => 'required',
-            // 'foto' => 'required',
+            'foto' => 'required',
         ]);
 
         if ($validation->fails()) {
             return json_encode(['status' => false, 'message' => $validation->messages()]);
+        }
+
+        if ($request->foto != null) {
+            $extention = $request->foto->extension();
+            $file_name = time() . '.' . $extention;
+            $txt = "storage/owners/" . $file_name;
+            $request->foto->storeAs('public/owners', $file_name);
+            $foto = $txt;
         }
 
         $owner = Owner::create([
@@ -37,7 +45,7 @@ class OwnerController extends Controller
             'no_hp' => $request->no_hp,
             'no_ktp' => $request->no_ktp,
             'alamat' => $request->alamat,
-            'foto' => 'test',
+            'foto' => $foto,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
@@ -56,12 +64,20 @@ class OwnerController extends Controller
 
     public function update(Request $request) {
         $data = Owner::findOrFail($request->id);
+
+        if ($request->foto != null) {
+            $extention = $request->foto->extension();
+            $file_name = time() . '.' . $extention;
+            $txt = "storage/owners/" . $file_name;
+            $request->foto->storeAs('public/owners', $file_name);
+            $foto = $txt;
+        }
         if($data){
             $data->nama = $request->nama;
             $data->no_ktp = $request->no_ktp;
             $data->no_hp = $request->no_hp;
             $data->alamat = $request->alamat;
-            $data->foto = $request->foto == null ? 'test' : 'test1';
+            $data->foto = $request->foto == null ? 'test' : $foto;
             $data->updated_at = Carbon::now();
             $data->save();
 

@@ -20,6 +20,13 @@
                             <form action="{{ route('simpanOwner') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method("POST")
+                                <div class="sub-title">Foto Pemilik Kos</div>
+                                <div>
+                                    @if ($owner->foto != 'test')
+                                        <img src="{{ asset($owner->foto) }}" alt="" height="150px">
+                                    @endif
+                                    <input type="file" name="foto" class="form-control">
+                                </div>
                                 <div class="sub-title">Nama</div>
                                 <div>
                                     <input type="hidden" name="id" id="id" value="{{ $owner->id }}">
