@@ -17,26 +17,28 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <form action="">
+                            <form action="{{ route('submit_kecamatan') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                @method("POST")
                                 <div class="sub-title">Kecamatan</div>
                                 <div>
-                                    <input type="text" class="form-control" placeholder="Text input">
+                                    <input type="text" name="kecamatan" class="form-control" placeholder="Masukkan nama kecamatan">
                                 </div>
                                 <div class="sub-title">Deskripsi</div>
                                 <div>
-                                    <textarea class="form-control" rows="3"></textarea>
+                                    <textarea class="form-control" rows="3" name="deskripsi"></textarea>
                                 </div>
                                 <div class="sub-title">Status</div>
                                 <div>
                                     <div class="radio3 radio-check radio-inline">
-                                        <input type="radio" id="radio4" name="radio2" value="option1" checked="">
-                                        <label for="radio4">
+                                        <input type="radio" id="status" name="status" value="aktif" checked="">
+                                        <label for="status">
                                             Aktif
                                         </label>
                                     </div>
                                     <div class="radio3 radio-check radio-inline">
-                                        <input type="radio" id="radio4" name="radio2" value="option1" checked="">
-                                        <label for="radio4">
+                                        <input type="radio" id="status" name="status" value="inaktif" checked="">
+                                        <label for="status">
                                             Inaktif
                                         </label>
                                     </div>

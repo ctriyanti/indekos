@@ -22,6 +22,7 @@ Route::get('/admin/dashboard', function () {
 });
 Route::get('admin/kecamatan', [KecamatanController::class, 'index']);
 Route::get('admin/kecamatan/create', [KecamatanController::class, 'create_view']);
+Route::post('admin/kecamatan/submit', [KecamatanController::class, 'submit'])->name('submit_kecamatan');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
