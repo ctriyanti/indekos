@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\KecamatanController;
 use App\Http\Controllers\Admin\KosController;
 use App\Http\Controllers\Admin\OwnerController;
+use App\Http\Controllers\User\GeneralController;
 use App\Http\Controllers\User\KosController as UserKosController;
 use App\Models\Kos;
 use Illuminate\Support\Facades\Route;
@@ -18,9 +19,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landingPage.index');
-});
 Route::get('/admin/dashboard', function () {
     return view('admin.index');
 });
@@ -49,6 +47,7 @@ Route::post('admin/kos/update', [KosController::class, 'update'])->name('simpanK
 Route::post('admin/kos/delete', [KosController::class, 'delete'])->name('hapusKos');
 
 // User's Route
+Route::get('/', [GeneralController::class, 'index']);
 Route::get('cari-kos', [UserKosController::class, 'index']);
 Route::post('cari-kos', [UserKosController::class, 'findKos'])->name('findKos');
 

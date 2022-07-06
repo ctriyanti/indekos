@@ -18,8 +18,9 @@
                 </form>
             </div>
         </div>
-    </header><!-- Portfolio Grid-->
-    <section class="page-section bg-light" id="portfolio">
+    </header>
+    <!-- Kos Grid-->
+    <section class="page-section bg-light" id="kos-grid">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Daftar Semua Kos</h2>
@@ -115,54 +116,39 @@
         </div>
     </section>
     
-    <!-- About-->
-    <section class="page-section" id="about">
+    <!-- Randomize Kos-->
+    <section class="page-section" id="random-kos">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Kosan Lainnya...</h2>
                 <h3 class="section-subheading text-muted">Pilihan kos kami lainnya</h3>
             </div>
             <ul class="timeline">
-                <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('tlandingPage/assets/img/about/1.jpg')}}" alt="..." /></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>2009-2011</h4>
-                            <h4 class="subheading">Our Humble Beginnings</h4>
-                        </div>
-                        <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                    </div>
-                </li>
-                <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('tlandingPage/assets/img/about/2.jpg')}}" alt="..." /></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>March 2011</h4>
-                            <h4 class="subheading">An Agency is Born</h4>
-                        </div>
-                        <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('tlandingPage/assets/img/about/3.jpg')}}" alt="..." /></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>December 2015</h4>
-                            <h4 class="subheading">Transition to Full Service</h4>
-                        </div>
-                        <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                    </div>
-                </li>
-                <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('tlandingPage/assets/img/about/4.jpg')}}" alt="..." /></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>July 2020</h4>
-                            <h4 class="subheading">Phase Two Expansion</h4>
-                        </div>
-                        <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                    </div>
-                </li>
+                @foreach ($random_kos as $rdm)
+                    @if ($loop->iteration % 2 == 1)
+                        <li>
+                            <div class="timeline-image"><img class="rounded-circle img-fluid img-cir-fluid" src="{{ asset($rdm->foto_utama) }}" alt="..."/></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h6>{{ $rdm->kecamatan->kecamatan }}</h6>
+                                    <h4 class="subheading">{{ $rdm->nama_kos }}</h4>
+                                </div>
+                                <div class="timeline-body"><p class="text-muted">{{ Str::limit($rdm->description, 100, '...') }}</p></div>
+                            </div>
+                        </li>
+                    @else
+                        <li class="timeline-inverted">
+                            <div class="timeline-image"><img class="rounded-circle img-fluid img-cir-fluid" src="{{ asset($rdm->foto_utama) }}" alt="..." /></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h6>{{ $rdm->kecamatan->kecamatan }}</h6>
+                                    <h4 class="subheading">{{ $rdm->nama_kos }}</h4>
+                                </div>
+                                <div class="timeline-body"><p class="text-muted">{{ Str::limit($rdm->description, 100, '...') }}</p></div>
+                            </div>
+                        </li>
+                    @endif
+                @endforeach
                 <li class="timeline-inverted">
                     <div class="timeline-image">
                         <h4>
