@@ -30,26 +30,36 @@
                                             <th>Kecamatan</th>
                                             <th>Pemilik Kos</th>
                                             <th>Nama Kos</th>
-                                            <th>Jenis Sewa</th>
+                                            <th class="text-center">Jenis Sewa</th>
                                             <th class="text-center">Harga</th>
                                             <th class="text-center">Status</th>
-                                            <th>Diubah Oleh</th>
+                                            <th class="text-center">Diubah Oleh</th>
                                             <th class="text-center">Tanggal Dibuat</th>
-                                            <th class="text-center">Lihat Map</th>
+                                            <th class="text-center">Map</th>
                                             <th class="text-center">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($kecamatan as $item)
+                                        @foreach ($kos as $item)
                                             <tr>
                                                 <td class="text-center">{{ $loop->iteration }}</td>
-                                                <td>{{ $item->kecamatan }}</td>
-                                                <td>{{ Str::limit($item->description, 70, '...') }}</td>
+                                                <td class="text-center">
+                                                    <img src="{{ asset($item->foto_utama) }}" alt="foto pemilik kos" height="120px">    
+                                                </td>
+                                                <td>{{ $item->kecamatan->kecamatan }}</td>
+                                                <td>{{ $item->owner->nama }}</td>
+                                                <td>{{ $item->nama_kos }}</td>
+                                                <td class="text-center">{{ $item->jenis_sewa }}</td>
+                                                <td class="text-center">{{ $item->harga }}</td>
                                                 <td class="text-center">{{ $item->status }}</td>
                                                 <td class="text-center">{{ $item->updated_by }}</td>
+                                                <td class="text-center">{{ $item->created_at->format('Y-m-d') }}</td>
+                                                <td>
+                                                    <a href="{{ $item->url_map }}" target="_blank">Lihat Map</a>
+                                                </td>
                                                 <td style="display: flex; margin: 5px" class="m-sm-1">
-                                                    <a href="{{ url('admin/kecamatan/edit/'.$item->id) }}" class="btn btn-success" style="margin-right: 5px">Sunting</a>
-                                                    <form action="{{route('hapusKecamatan')}}" method="POST" enctype="multipart/form-data">
+                                                    <a href="{{ url('admin/kos/edit/'.$item->id) }}" class="btn btn-success" style="margin-right: 5px">Sunting</a>
+                                                    <form action="{{route('hapusKos')}}" method="POST" enctype="multipart/form-data">
                                                         @csrf
                                                         @method("POST")
                                                         <input type="hidden" value="{{ $item->id }}" name="id">

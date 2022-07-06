@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\KecamatanController;
 use App\Http\Controllers\Admin\KosController;
 use App\Http\Controllers\Admin\OwnerController;
+use App\Models\Kos;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,11 @@ Route::post('admin/owner/update', [OwnerController::class, 'update'])->name('sim
 
 // kos
 Route::get('admin/kos', [KosController::class, 'index'])->name('indexKos');
+Route::get('admin/kos/create', [KosController::class, 'create_view']);
+Route::post('admin/kos/submit', [KosController::class, 'submit'])->name('tambahKos');
+Route::get('admin/kos/edit/{id}', [KosController::class, 'edit_view']);
+Route::post('admin/kos/update', [KosController::class, 'update'])->name('simpanKos');
+Route::post('admin/kos/delete', [KosController::class, 'delete'])->name('hapusKos');
 
 
 

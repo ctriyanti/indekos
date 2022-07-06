@@ -31,13 +31,13 @@
                                 <div class="sub-title">Status</div>
                                 <div>
                                     <div class="radio3 radio-check radio-inline">
-                                        <input type="radio" id="status" name="status" value="active" checked="">
+                                        <input type="radio" id="status" name="status" value="active" checked>
                                         <label for="status">
                                             Aktif
                                         </label>
                                     </div>
                                     <div class="radio3 radio-check radio-inline">
-                                        <input type="radio" id="status" name="status" value="inactive" checked="">
+                                        <input type="radio" id="status" name="status" value="inactive">
                                         <label for="status">
                                             Inaktif
                                         </label>
