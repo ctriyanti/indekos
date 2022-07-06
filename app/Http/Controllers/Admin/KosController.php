@@ -75,28 +75,33 @@ class KosController extends Controller
     }
 
     public function update(Request $request) {
-        dd($request->all);
-        $data = Owner::findOrFail($request->id);
+        $data = Kos::findOrFail($request->id);
 
-        if ($request->foto != null) {
-            $extention = $request->foto->extension();
+        if ($request->foto_kos != null) {
+            $extention = $request->foto_kos->extension();
             $file_name = time() . '.' . $extention;
-            $txt = "storage/owners/" . $file_name;
-            $request->foto->storeAs('public/owners', $file_name);
+            $txt = "storage/kos/" . $file_name;
+            $request->foto_kos->storeAs('public/kos', $file_name);
             $foto = $txt;
+        } else{
+            $foto = $data->foto_utama;
         }
         if($data){
-            $data->nama = $request->nama;
-            $data->no_ktp = $request->no_ktp;
-            $data->no_hp = $request->no_hp;
-            $data->alamat = $request->alamat;
-            $data->foto = $request->foto == null ? 'test' : $foto;
+            $data->kecamatan_id = $request->kecamatan_id;
+            $data->foto_utama = $foto;
+            $data->nama_kos = $request->nama_kos;
+            $data->url_map = $request->url_map;
+            $data->owner_id = $request->pemilik_kos;
+            $data->harga = $request->harga;
+            $data->jenis_sewa = $request->jenis_sewa;
+            $data->status = $request->status;
+            $data->updated_by = 'admin';
             $data->updated_at = Carbon::now();
             $data->save();
 
-            return redirect()->route('indexOwner');
+            return redirect()->route('indexKos');
         } else{
-            return json_encode(['status' => false, 'message' => 'Gagal ubah pemilik kos']);
+            return json_encode(['status' => false, 'message' => 'Gagal ubah kos']);
         }
     }
 

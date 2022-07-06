@@ -21,7 +21,7 @@
                                 @csrf
                                 @method("POST")
                                 <div class="sub-title">Pemilik Kos</div>
-                                <input type="hidden" value="{{ $kos->id }}">
+                                <input type="hidden" value="{{ $kos->id }}" name="id" id="id">
                                 <div>
                                     <select class="form-control" name="pemilik_kos" id="pemilik_kos" onchange="ownerKos()">
                                         <option value="" disabled>-- Pilih Pemilik Kos --</option>
