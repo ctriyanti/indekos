@@ -18,6 +18,7 @@ class CreateKosTable extends Migration
             $table->integer('kecamatan_id');
             $table->string('nama_kos');
             $table->string('foto_utama');
+            $table->text('description');
             $table->text('url_map');
             $table->integer('owner_id');
             $table->bigInteger('harga');

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\KecamatanController;
 use App\Http\Controllers\Admin\KosController;
 use App\Http\Controllers\Admin\OwnerController;
+use App\Http\Controllers\User\KosController as UserKosController;
 use App\Models\Kos;
 use Illuminate\Support\Facades\Route;
 
@@ -47,7 +48,9 @@ Route::get('admin/kos/edit/{id}', [KosController::class, 'edit_view']);
 Route::post('admin/kos/update', [KosController::class, 'update'])->name('simpanKos');
 Route::post('admin/kos/delete', [KosController::class, 'delete'])->name('hapusKos');
 
-
+// User's Route
+Route::get('cari-kos', [UserKosController::class, 'index']);
+Route::post('cari-kos', [UserKosController::class, 'findKos'])->name('findKos');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -7674,6 +7674,10 @@ textarea.form-control-lg {
   text-align: right !important;
 }
 
+.text-justify {
+    text-align: justify !important;
+  }
+
 .text-center {
   text-align: center !important;
 }
@@ -11426,11 +11430,19 @@ header.masthead .masthead-subheading {
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 header.masthead .masthead-heading {
-  font-size: 3.25rem;
+  font-size: 2.75rem;
   font-weight: 700;
-  line-height: 3.25rem;
+  line-height: 2.75rem;
   margin-bottom: 2rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+header.masthead .find-kos form{
+    display: inline-flex;
+}
+
+header.masthead .find-kos .kecamatan {
+    margin: 0px 15px;
 }
 
 @media (min-width: 768px) {
@@ -11445,9 +11457,9 @@ header.masthead .masthead-heading {
     margin-bottom: 2rem;
   }
   header.masthead .masthead-heading {
-    font-size: 4.5rem;
+    font-size: 2.75rem;
     font-weight: 700;
-    line-height: 4.5rem;
+    line-height: 2.75rem;
     margin-bottom: 4rem;
   }
 }

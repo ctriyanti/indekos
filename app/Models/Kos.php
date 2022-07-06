@@ -10,7 +10,7 @@ class Kos extends Model
     use HasFactory;
     protected $table = 'kos';
     protected $fillable = [
-        'id', 'kecamatan_id', 'nama_kos', 'foto_utama', 'status', 'url_map', 'owner_id', 'harga', 'jenis_sewa', 'created_by', 'updated_by', 'created_at', 'updated_at'
+        'id', 'kecamatan_id', 'nama_kos', 'description', 'foto_utama', 'status', 'url_map', 'owner_id', 'harga', 'jenis_sewa', 'created_by', 'updated_by', 'created_at', 'updated_at'
     ];
 
     public function kecamatan()
