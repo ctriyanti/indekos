@@ -17,6 +17,15 @@ class KosController extends Controller
     }
 
     public function findKos(Request $request) {
-        dd("test find kos!");
+        $id =  $request->kecamatan_id;
+        
+        $kos = Kos::select('foto_utama', 'nama_kos', 'kos.description as description', 'kecamatan.kecamatan as kecamatan')
+                ->leftJoin('kecamatan', 'kos.kecamatan_id', '=', 'kecamatan.id')
+                ->where('kecamatan.id', $id)
+                ->where('kos.status', 'active')->get();
+        $random_kos = Kos::with('kecamatan')->where('status', 'active')->inRandomOrder()->limit(4)->get();
+        $kecamatan = Kecamatan::where('status', 'active')->get();
+        return view('landingPage.kos.find', compact('kecamatan', 'kos', 'random_kos'));
+
     }
 }

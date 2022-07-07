@@ -31,7 +31,7 @@
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 1-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal{{ $place->id }}">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal{{ $loop->iteration }}">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <!-- Portfolio item 1 modal popup-->
-                    <div class="portfolio-modal modal fade" id="portfolioModal{{ $place->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="portfolio-modal modal fade" id="portfolioModal{{ $loop->iteration }}" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="close-modal" data-bs-dismiss="modal"><img src="{{asset('tlandingPage/assets/img/close-icon.svg')}}" alt="Close modal" /></div>
@@ -54,7 +54,7 @@
                                             <div class="modal-body">
                                                 <!-- Project details-->
                                                 <h2 class="text-uppercase">Project Name</h2>
-                                                <p class="item-intro text-muted">{{ $place->kecamatan->kecamatan }}</p>
+                                                <p class="item-intro text-muted">{{ $place->kecamatan }}</p>
                                                 <img class="img-fluid d-block mx-auto" src="{{ asset($place->foto_utama) }}" alt="{{ $place->nama_kos }}" />
                                                 <p>
                                                     {{ $place->description }}
@@ -80,8 +80,7 @@
             </div>
         </div>
     </section>
-
-    <!-- Layanan-->
+    <!-- Services-->
     <section class="page-section" id="services">
         <div class="container">
             <div class="text-center">
