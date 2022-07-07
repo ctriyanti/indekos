@@ -2,7 +2,7 @@
     {{-- Banner Header --}}
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading">Selamat datang di [nama_website]</div>
+            <div class="masthead-subheading">Selamat datang di FindmyKos</div>
             <div class="masthead-heading text-uppercase">Temukan kos menarik sesuai selera mu!</div>
             <div class="find-kos">
                 <form action="{{ route('findKos') }}" method="POST" enctype="multipart/form-data">

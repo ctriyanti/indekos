@@ -2,7 +2,7 @@
     {{-- Banner Header --}}
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading">Selamat datang di [nama_website]</div>
+            <div class="masthead-subheading">Selamat datang di FindmyKos</div>
             <div class="masthead-heading text-uppercase">Temukan kos menarik sesuai selera mu!</div>
             <a class="btn btn-primary btn-xl text-uppercase" href="{{ url('cari-kos') }}">Cari Kos</a>
         </div>
