@@ -47,10 +47,12 @@ Route::post('admin/kos/update', [KosController::class, 'update'])->name('simpanK
 Route::post('admin/kos/delete', [KosController::class, 'delete'])->name('hapusKos');
 
 // User's Route
-Route::get('/', [GeneralController::class, 'index']);
+Route::get('/', [GeneralController::class, 'index'])->name('home');
 Route::get('cari-kos', [UserKosController::class, 'index']);
 Route::post('cari-kos', [UserKosController::class, 'findKos'])->name('findKos');
 Route::post('cari-kos/hasil', [UserKosController::class, 'result'])->name('resultKos');
+
+Route::post('/message/submit', [GeneralController::class, 'submit_message'])->name('tambahPesan');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
