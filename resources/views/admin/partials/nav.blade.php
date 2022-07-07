@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html"><strong>FmK Dashboard</strong></a>
+        <a class="navbar-brand" href="{{ url('admin/dashboard') }}"><strong>FmK Dashboard</strong></a>
 
         <div id="sideNav" href="">
             <i class="fa fa-bars icon"></i>
@@ -34,7 +34,7 @@
     <div class="sidebar-collapse">
         <ul class="nav" id="main-menu">
             <li>
-                <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                <a class="active-menu" href="{{ url('admin/dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-desktop"></i> Kecamatan<span class="fa arrow"></span></a>

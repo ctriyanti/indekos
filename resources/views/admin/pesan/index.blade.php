@@ -2,7 +2,7 @@
     <div id="page-wrapper">
         <div class="header">
             <h1 class="page-header">
-                Dashboard <small>Welcome John Doe</small>
+                Dashboard <small>Welcome Admin</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#">Beranda</a></li>
