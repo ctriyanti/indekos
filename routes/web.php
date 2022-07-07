@@ -45,6 +45,7 @@ Route::post('admin/kos/submit', [KosController::class, 'submit'])->name('tambahK
 Route::get('admin/kos/edit/{id}', [KosController::class, 'edit_view']);
 Route::post('admin/kos/update', [KosController::class, 'update'])->name('simpanKos');
 Route::post('admin/kos/delete', [KosController::class, 'delete'])->name('hapusKos');
+Route::post('admin/kos/get/owner', [KosController::class, 'get_owner'])->name('getOwner');
 
 // pesan
 Route::get('admin/pesan', [GeneralController::class, 'admin_pesan'])->name('adminPesan');

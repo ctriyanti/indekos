@@ -113,4 +113,9 @@ class KosController extends Controller
         $kos->delete();
         return redirect()->route('indexKos');
     }
+
+    public function get_owner(Request $request){
+        $owner = Owner::where('id', $request->pemilik_kos)->first();
+        return response()->json(['code' => 200, 'status'=>'success']);
+    }
 }

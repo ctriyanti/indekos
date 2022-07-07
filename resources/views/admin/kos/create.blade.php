@@ -22,14 +22,14 @@
                                 @method("POST")
                                 <div class="sub-title">Pemilik Kos</div>
                                 <div>
-                                    <select class="form-control" name="pemilik_kos" id="pemilik_kos" onchange="ownerKos()">
+                                    <select class="form-control get-owner" name="pemilik_kos" id="pemilik_kos"">
                                         <option value="" disabled>-- Pilih Pemilik Kos --</option>
                                         @foreach ($owners as $owner)
                                             <option  value="{{ $owner->id }}">{{ $owner->nama }}</option>
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="sub-title">Nomor Handphone</div>
+                                {{-- <div class="sub-title">Nomor Handphone</div>
                                 <div>
                                     <input type="text" name="no_hp" class="form-control" value="" disabled>
                                 </div>
@@ -40,7 +40,7 @@
                                 <div class="sub-title">Alamat</div>
                                 <div>
                                     <textarea class="form-control" rows="3" name="alamat" disabled></textarea>
-                                </div>
+                                </div> --}}
                                 <div class="sub-title">Kecamatan</div>
                                 <div>
                                     <select class="form-control" name="kecamatan_id" id="kecamatan_id">
@@ -113,10 +113,4 @@
         </div>
         <!-- /. PAGE INNER  -->
     </div>
-    <script>
-        function ownerKos() {
-            var owner = document.getElementById("pemilik_kos").value;
-            // alert(owner)
-        }
-    </script>
 </x-app-layout>
