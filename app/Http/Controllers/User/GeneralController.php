@@ -38,4 +38,17 @@ class GeneralController extends Controller
         }
         return json_encode(['status' => false, 'message' => 'Gagal memberikan pesan!']);
     }
+
+    public function admin_pesan() {
+        $pesan = Message::all();
+        return view('admin.pesan.index', compact('pesan'));
+    }
+
+    public function set_testimoni(Request $request) {
+        $id = $request->id;
+        $pesan = Message::findOrFail($id);
+        $pesan->delete();
+
+        return redirect()->route('adminPesan');
+    }
 }

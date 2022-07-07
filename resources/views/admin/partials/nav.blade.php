@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html"><strong>JacKos Dashboard</strong></a>
+        <a class="navbar-brand" href="index.html"><strong>FmK Dashboard</strong></a>
 
         <div id="sideNav" href="">
             <i class="fa fa-bars icon"></i>
@@ -66,6 +66,14 @@
                     </li>
                     <li>
                         <a href="{{url('admin/kos/create')}}">Tambah Kos</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-edit"></i> Kritik & Saran<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{url('admin/pesan')}}">Daftar Pesan</a>
                     </li>
                 </ul>
             </li>

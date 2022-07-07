@@ -46,6 +46,10 @@ Route::get('admin/kos/edit/{id}', [KosController::class, 'edit_view']);
 Route::post('admin/kos/update', [KosController::class, 'update'])->name('simpanKos');
 Route::post('admin/kos/delete', [KosController::class, 'delete'])->name('hapusKos');
 
+// pesan
+Route::get('admin/pesan', [GeneralController::class, 'admin_pesan'])->name('adminPesan');
+Route::post('admin/pesan/set/testi', [GeneralController::class, 'set_testimoni'])->name('setTestimoni');
+
 // User's Route
 Route::get('/', [GeneralController::class, 'index'])->name('home');
 Route::get('cari-kos', [UserKosController::class, 'index']);

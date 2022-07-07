@@ -19,6 +19,7 @@ class CreateMessagesTable extends Migration
             $table->string('phone');
             $table->string('email');
             $table->text('message');
+            $table->boolean('is_testimoni')->default('false');
             $table->timestamps();
         });
     }

@@ -10,6 +10,6 @@ class Message extends Model
     use HasFactory;
     protected $table = 'messages';
     protected $fillable = [
-        'id', 'name', 'phone', 'email', 'message', 'created_at', 'updated_at'
+        'id', 'name', 'phone', 'email', 'message', 'created_at', 'updated_at', 'is_testimoni'
     ];
 }
