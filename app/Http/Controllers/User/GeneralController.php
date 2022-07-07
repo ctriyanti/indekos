@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 class GeneralController extends Controller
 {
     public function index(){
-        $kos = Kos::with('kecamatan')->where('status', 'active')->inRandomOrder()->limit(9)->get();
+        $kos = Kos::with('kecamatan')->with('owner')->where('status', 'active')->inRandomOrder()->limit(9)->get();
         return view('landingPage.index', compact('kos'));
     }
 
