@@ -53,6 +53,7 @@ class KosController extends Controller
             'owner_id' => $request->pemilik_kos,
             'harga' => $request->harga,
             'jenis_sewa'=> $request->jenis_sewa,
+            'description' => $request->deskripsi,
             'status' => $request->status,
             'created_by' => 'admin',
             'updated_by' => 'admin',
@@ -95,6 +96,7 @@ class KosController extends Controller
             $data->harga = $request->harga;
             $data->jenis_sewa = $request->jenis_sewa;
             $data->status = $request->status;
+            $data->description = $request->deskripsi;
             $data->updated_by = 'admin';
             $data->updated_at = Carbon::now();
             $data->save();

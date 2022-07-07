@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="sub-title">Deskripsi</div>
                                 <div>
-                                    {{-- <textarea class="form-control" rows="3" name="deskripsi">{{ $kos->deskripsi }}</textarea> --}}
+                                    <textarea class="form-control" rows="3" name="deskripsi">{{ $kos->description }}</textarea>
                                 </div>
                                 <div class="sub-title">URL Map</div>
                                 <div>
