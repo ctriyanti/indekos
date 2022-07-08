@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    height: 100%;
+    background-color: antiquewhite;
+}
+
+.login-container {
+    display: table;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.box {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 150px;
+    
+}
+
+.login {
+    width: 500px;
+    height: 200px;
+    background-color: aqua;
+    padding: 10px 30px;
+    border-radius: 15px;
+}
+
+.button-login {
+    margin-top: 10px;
+}

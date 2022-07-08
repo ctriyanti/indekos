@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\KecamatanController;
 use App\Http\Controllers\Admin\KosController;
 use App\Http\Controllers\Admin\OwnerController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\User\GeneralController;
 use App\Http\Controllers\User\KosController as UserKosController;
 use App\Models\Kos;
@@ -19,9 +20,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.index');
-});
+// Route::get('/admin/dashboard', function () {
+//     return view('admin.index');
+// });
 // kecamatan
 Route::get('admin/kecamatan', [KecamatanController::class, 'index'])->name('indexKecamatan');
 Route::get('admin/kecamatan/create', [KecamatanController::class, 'create_view']);
@@ -59,8 +60,11 @@ Route::post('cari-kos/hasil', [UserKosController::class, 'result'])->name('resul
 
 Route::post('/message/submit', [GeneralController::class, 'submit_message'])->name('tambahPesan');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('admin/dashboard', function () {
+    return view('admin.index');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('admin/login', [GeneralController::class, 'login'])->name('login');
+Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])
+                ->name('logout');
 require __DIR__.'/auth.php';

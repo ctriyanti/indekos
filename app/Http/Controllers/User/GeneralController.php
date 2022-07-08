@@ -51,4 +51,8 @@ class GeneralController extends Controller
 
         return redirect()->route('adminPesan');
     }
+
+    public function login(){
+        return view('admin.auth.login');
+    }
 }
