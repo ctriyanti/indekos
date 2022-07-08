@@ -53,7 +53,7 @@
                                         <div class="col-lg-8">
                                             <div class="modal-body">
                                                 <!-- Project details-->
-                                                <h2 class="text-uppercase">Project Name</h2>
+                                                <h2 class="text-uppercase">{{ $place->nama_kos }}</h2>
                                                 <p class="item-intro text-muted">{{ $place->kecamatan->kecamatan }}</p>
                                                 <img class="img-fluid d-block mx-auto" src="{{ asset($place->foto_utama) }}" alt="{{ $place->nama_kos }}" />
                                                 <p>
