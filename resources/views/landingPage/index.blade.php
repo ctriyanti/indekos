@@ -87,7 +87,7 @@
                                                     Threads
                                                 </li>
                                             </ul>
-                                            <a href="{{ url('https://wa.me/'.$place->owner->no_hp.'?text=saya+ingin+melihat+kos+dengan+nama'.$place->nama_kos) }}" class="btn btn-primary btn-xl text-uppercase">
+                                            <a href="{{ url('https://wa.me/'.$place->owner->no_hp.'?text=saya+ingin+melihat+kos+dengan+nama'.$place->nama_kos) }}" class="btn btn-primary btn-xl text-uppercase" target="_blank">
                                                 <i class="fas fa-home me-1"></i>
                                                 Booking Kos!
                                             </a>

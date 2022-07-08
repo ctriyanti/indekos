@@ -65,10 +65,10 @@
                                                         Threads
                                                     </li>
                                                 </ul>
-                                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                                <a href="{{ url('https://wa.me/'.$place->contact.'?text=saya+ingin+melihat+kos+dengan+nama'.$place->nama_kos) }}" class="btn btn-primary btn-xl text-uppercase" target="_blank">
                                                     <i class="fas fa-home me-1"></i>
                                                     Booking Kos!
-                                                </button>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
